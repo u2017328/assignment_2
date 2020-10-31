@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -25,8 +25,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
+      working-directory: my-app
     - run: npm run build --if-present
+      working-directory: my-app
     - run: npm test
+<<<<<<< HEAD
     - name: Deploy
       run: |
         git config --global user.name $user_name
@@ -38,3 +41,6 @@ jobs:
         user_email: 'github-actions[bot]@users.noreply.github.com'
         github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
         repository: ${{ github.repository }}
+=======
+      working-directory: my-app
+>>>>>>> origin
