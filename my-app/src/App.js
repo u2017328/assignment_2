@@ -9,6 +9,9 @@ function App() {
         <p>
           Edit <code>src/App.js</code> text changes by Talha 328.
         </p>
+    <p>
+          Text Changes #2
+        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
